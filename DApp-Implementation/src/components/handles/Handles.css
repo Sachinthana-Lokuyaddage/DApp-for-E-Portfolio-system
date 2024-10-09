@@ -1,5 +1,5 @@
 .socials {
-    background-color: var(--color-bg);
+    background-color: var(--color-white);
 
     width: 100%;
     display: flex;
@@ -11,7 +11,7 @@
 }
 
 .socials .icon {
-    color: var(--color-blue);
+    color: var(--color-Lblue);
     margin: 20px 0 20px 0;
     height: 60px;
     width: 60px;
