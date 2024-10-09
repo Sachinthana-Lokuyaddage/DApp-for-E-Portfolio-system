@@ -6,6 +6,7 @@ import Projects from "./components/projects/Projects";
 import Skills from "./components/skills/Skills";
 import Experience from "./components/experience/Experience";
 import Contact from "./components/contact/Contact";
+
 import "./index.css";
 function App() {
   const [state,setState]=useState({
@@ -25,6 +26,7 @@ function App() {
       <Projects state={state} />
       <Skills />
       <Experience state={state} />
+    
       <Contact state={state} />
       <Handles />
     </>

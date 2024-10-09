@@ -1,8 +1,8 @@
 .exp-section {
-    color: white;
+    color: #000;
     width: 100%;
     height: 100%;
-    background-color: var(--color-bg);
+    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -38,7 +38,7 @@
 
 .education .edu-card {
     width: 500px;
-    background-color: var(--color-card);
+    background-color: var();
     padding: 24px 24px 24px 24px;
     display: flex;
     flex-direction: column;

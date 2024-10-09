@@ -22,9 +22,9 @@
     font-weight: 400;
     color: white;
     font-weight: 400;
-    background-color: var(--color-bg);
+    background-color: var(--color-);
     border: 2px solid rgb(86, 88, 226);
-    border-radius: 20px 0 20px 0px ;
+    border-radius: 20px  ;
 }
 a:hover{
     color: white !important;
