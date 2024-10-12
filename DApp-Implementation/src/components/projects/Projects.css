@@ -7,7 +7,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /* gap: ; */
 }
 
 .project-section .title {
@@ -20,9 +19,21 @@
 }
 
 /* =========card========== */
-.project-card {
-    height: 450px;
+.project-section .card-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns cards to the start */
+    gap: 20px; /* Adjust the spacing between cards */
+    overflow-x: auto; /* Enables horizontal scroll */
+    width: 90vw; /* Limits the viewable width to create the scroll */
+    padding: 10px;
+    scroll-snap-type: x mandatory; /* Optional: snap scroll behavior */
+}
+
+.project-section .project-card {
+    flex-shrink: 0;
     width: 400px;
+    height: 450px;
     background-color: var(--color-blue);
     display: flex;
     flex-direction: column;
@@ -30,28 +41,29 @@
     justify-content: center;
     border-radius: 10px;
     transition: 400ms;
+    scroll-snap-align: start; /* Optional: snap each card when scrolling */
 }
-.project-card:hover {
+
+.project-section .project-card:hover {
     transform: scale(1.06);
     color: #000;
 }
 
-.project-card .card-img  {
+.project-section .card-img {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
-.project-card .card-img img {
+.project-section .card-img img {
     margin-top: 14px;
     border-radius: 8px;
     width: 370px;
     height: 250px;
-
 }
-.card-wrapper a{
+
+.card-wrapper a {
     text-decoration: none;
     color: white;
 }
@@ -67,33 +79,6 @@
     font-weight: 300;
     text-align: center;
     opacity: 0.8;
-
-}
-
-.project-section .card-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 70px;
-}
-
-.project-section .donate{
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 8px 24px 8px 24px;
-    border-radius: 20px;
-    border: 1px solid var(--color-blue);
-    opacity: 0.9;
-}
-.donate:hover{
-background-color:var(--color-blue);
-}
-
-.project-section .icon{
-    width: 18px;
-    height: 18px;
-   margin-left: 8px;
 }
 
 /* =========media querries========== */
@@ -101,28 +86,20 @@ background-color:var(--color-blue);
     .project-section {
         padding-top: 60px;
         height: 100%;
-        gap: 70px;
     }
+    
     .project-section .title {
         font-size: 24px;
     }
 
-    /* =========card========== */
     .project-section .card-wrapper {
-        flex-direction: column;
-        gap: 34px;
-        margin-bottom: 20px;
+        flex-direction: row;
+        gap: 20px;
+        padding-bottom: 20px;
     }
-    /* eth */
-    .project-section .donate{
-        font-size: 14px;
-        font-weight: 400;
-        margin-bottom: 60px;
-    }
-    
-    
-    .project-section .icon{
-        width: 16px;
-        height: 16px;
+
+    .project-section .project-card {
+        width: 320px;
+        height: 380px;
     }
 }

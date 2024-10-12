@@ -38,7 +38,7 @@ const Experience = ({ state }) => {
                     {education.length > 0 && education.map((edu) => (
                         <div key={edu.id} className="edu-card">
                             <p className="card-text1">
-                                <SlCalender className='icon' /> {edu.date}
+                                 {edu.date}
                             </p>
                             <h3 className="card-text2">{edu.degree}</h3>
                             <p className="card-text3">{edu.knowledgeAcquired}</p>
@@ -55,7 +55,7 @@ const Experience = ({ state }) => {
                     {experience.length > 0 && experience.map((exp) => (
                         <div key={exp.id} className="edu-card">
                             <p className="card-text1">
-                                <SlCalender className='icon' /> {exp.date}
+                               {exp.date}
                             </p>
                             <h3 className="card-text2">{exp.post}</h3>
                             <p className="card-text3">{exp.knowledgeAcquired}</p>

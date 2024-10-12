@@ -10,14 +10,14 @@ const Wallet =({saveState})=>{
       try{
         const web3 = new Web3(window.ethereum);
         await window.ethereum.request({method:'eth_requestAccounts'});
-        const contract = new web3.eth.Contract(ABI,"0x9848127c79C2c047D21F447C4bbF04Aad1F41AD3");
+        const contract = new web3.eth.Contract(ABI,"0xD82282d1e03B01Ee2A73FaA060c355ae0eA0e3F5");
         console.log(contract)
          setConnected(false);
          saveState({web3:web3,contract:contract});
       }catch(error){
         alert("Please Install Metamask");
       }
-        
+        //0xD82282d1e03B01Ee2A73FaA060c355ae0eA0e3F5 , 0xdD2aEf83447bc2a0860727DCb0EFe61056a7a8aa
       }
       return<>
       <div className="header">
