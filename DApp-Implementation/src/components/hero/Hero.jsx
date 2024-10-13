@@ -25,6 +25,9 @@ const Hero = ({ state }) => {
 
     return (
         <section className="hero">
+            <div className='searchOption'>
+
+            </div>
             <div className="container">
                 <div className="hero-text">
                     <p><span></span> </p>

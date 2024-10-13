@@ -25,8 +25,7 @@ function App() {
       <Handles />
       <Projects state={state} />
       <Skills />
-      <Experience state={state} />
-    
+      <Experience state={state} /> 
       <Contact state={state} />
       <Handles />
     </>
