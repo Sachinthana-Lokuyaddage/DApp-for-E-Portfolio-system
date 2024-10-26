@@ -22,7 +22,8 @@ const Skills = ({ state }) => {
     }, [state]);
 
     return (
-      
+      <section className='skills'>
+<h1 className="title">SKILLS </h1>
         <section className="skills-section">
                       
 
@@ -32,6 +33,7 @@ const Skills = ({ state }) => {
                     <p>{skill.proficiency}</p>
                 </div>
             ))}
+        </section>
         </section>
     );
 };
