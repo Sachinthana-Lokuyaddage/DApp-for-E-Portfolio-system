@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { Modal, ModalBody, Row } from "reactstrap"
-import './Hero.css'
+import React, { useEffect, useState } from 'react';
+import { Modal, ModalBody, Row } from "reactstrap";
+import './Hero.css';
 
 const Hero = ({ state }) => {
     const [modal, setModal] = useState(false);
     const [hero, setHero] = useState({
         imageLink: "",
         description: "",
-        resumeLink: ""
+        resumeLink: "",
+        email: "" // Add email state
     });
 
     useEffect(() => {
@@ -17,7 +18,8 @@ const Hero = ({ state }) => {
             setHero({
                 imageLink: heroData.imageLink,
                 description: heroData.description,
-                resumeLink: heroData.resumeLink
+                resumeLink: heroData.resumeLink,
+                email: heroData.email // Fetch email
             });
         };
         contract && fetchHero();
@@ -38,7 +40,7 @@ const Hero = ({ state }) => {
                         <ModalBody>
                             <Row className="text-align">
                                 <label htmlFor="" toggle={() => setModal(!modal)}>
-                                    Mail Id - sachinthanabuddhika79@gmail.com
+                                    Mail Id - {hero.email}
                                 </label>
                             </Row>
                         </ModalBody>

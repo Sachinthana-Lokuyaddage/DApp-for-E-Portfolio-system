@@ -1,28 +1,39 @@
-import React from 'react'
-import './Skills.css'
+import React, { useState, useEffect } from 'react';
+import './Skills.css';
 
-import react from "../../assets/skills/react.svg";
-import btc from "../../assets/skills/btc.png";
-import eth from "../../assets/skills/eth.png";
-import truffle from "../../assets/skills/truffle.png";
-import gns from "../../assets/skills/gns.png";
-import polygon from "../../assets/skills/polygon.png";
-import node from "../../assets/skills/node.svg";
+const Skills = ({ state }) => {
+    const [skills, setSkills] = useState([]);
 
+    useEffect(() => {
+        const { contract } = state;
 
-const Skills = () => {
-  return (
-    <section className="skills-section">
+        const fetchSkills = async () => {
+            try {
+                if (contract) {
+                    const skillsData = await contract.methods.getSkills().call();
+                    setSkills(skillsData);
+                }
+            } catch (error) {
+                console.error("Error fetching skills:", error);
+            }
+        };
 
-        <img src={react} alt="react-icon" />
-        <img src={btc} alt="btc-icon" />
-        <img src={eth} alt="eth-icon" />
-        <img src={truffle} alt="truffle-icon" />
-        <img src={gns} alt="gns-icon" />
-        <img src={polygon} alt="polygon-icon" />
-        <img src={node} alt="node-icon" />
-    </section>
-  )
-}
+        fetchSkills();
+    }, [state]);
 
-export default Skills
+    return (
+      
+        <section className="skills-section">
+                      
+
+            {skills.map((skill, index) => (
+                <div key={index} className="skill-item">
+                    <h4>{skill.name}</h4>
+                    <p>{skill.proficiency}</p>
+                </div>
+            ))}
+        </section>
+    );
+};
+
+export default Skills;
