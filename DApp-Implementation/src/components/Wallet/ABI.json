@@ -1,12 +1,294 @@
 [
 	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_proficiency",
+				"type": "string"
+			}
+		],
+		"name": "addSkill",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_platform",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_link",
+				"type": "string"
+			}
+		],
+		"name": "addSocialMedia",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_date",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_degree",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_knowledgeAcquired",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_institutionName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_educationDetailCount",
+				"type": "uint256"
+			}
+		],
+		"name": "changeEducation",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_date",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_post",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_knowledgeAcquired",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_companyName",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_experienceDetailCount",
+				"type": "uint256"
+			}
+		],
+		"name": "changeExperience",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_imageLink",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_resumeLink",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_email",
+				"type": "string"
+			}
+		],
+		"name": "changeHero",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_githubLink",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_projectCount",
+				"type": "uint256"
+			}
+		],
+		"name": "changeProject",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "donate",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_date",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_degree",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_knowledgeAcquired",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_institutionName",
+				"type": "string"
+			}
+		],
+		"name": "insertEducation",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_date",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_post",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_knowledgeAcquired",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_companyName",
+				"type": "string"
+			}
+		],
+		"name": "insertExperience",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_imageLink",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_resumeLink",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_email",
+				"type": "string"
+			}
+		],
+		"name": "insertHero",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_image",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_githubLink",
+				"type": "string"
+			}
+		],
+		"name": "insertProject",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
 	},
 	{
 		"inputs": [],
-		"name": "allEductationDetails",
+		"name": "allEducationDetails",
 		"outputs": [
 			{
 				"components": [
@@ -32,7 +314,7 @@
 					},
 					{
 						"internalType": "string",
-						"name": "instutionName",
+						"name": "institutionName",
 						"type": "string"
 					}
 				],
@@ -127,135 +409,6 @@
 	{
 		"inputs": [
 			{
-				"internalType": "string",
-				"name": "_date",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_degree",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_knowledgeAcquired",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_instutionName",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_educationDetailCount",
-				"type": "uint256"
-			}
-		],
-		"name": "changeEducation",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_date",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_post",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_knowledgeAcquired",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_companyName",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_experienceDetailCount",
-				"type": "uint256"
-			}
-		],
-		"name": "changeExperience",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_imageLink",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_resumeLink",
-				"type": "string"
-			}
-		],
-		"name": "changeHero",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_image",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_githubLink",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_projectCount",
-				"type": "uint256"
-			}
-		],
-		"name": "changeProject",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "donate",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
@@ -285,7 +438,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "instutionName",
+				"name": "institutionName",
 				"type": "string"
 			}
 		],
@@ -333,6 +486,19 @@
 	},
 	{
 		"inputs": [],
+		"name": "getEmail",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "getHero",
 		"outputs": [
 			{
@@ -356,11 +522,66 @@
 						"internalType": "string",
 						"name": "resumeLink",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
 					}
 				],
 				"internalType": "struct Portfolio.Hero",
 				"name": "",
 				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getSkills",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "proficiency",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Portfolio.Skill[]",
+				"name": "",
+				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getSocialMedia",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "platform",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "link",
+						"type": "string"
+					}
+				],
+				"internalType": "struct Portfolio.SocialMedia[]",
+				"name": "",
+				"type": "tuple[]"
 			}
 		],
 		"stateMutability": "view",
@@ -389,116 +610,14 @@
 				"internalType": "string",
 				"name": "resumeLink",
 				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "email",
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_date",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_degree",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_knowledgeAcquired",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_instutionName",
-				"type": "string"
-			}
-		],
-		"name": "insertEducation",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_date",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_post",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_knowledgeAcquired",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_companyName",
-				"type": "string"
-			}
-		],
-		"name": "insertExperience",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_imageLink",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_resumeLink",
-				"type": "string"
-			}
-		],
-		"name": "insertHero",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_description",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_image",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_githubLink",
-				"type": "string"
-			}
-		],
-		"name": "insertProject",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -547,6 +666,54 @@
 			{
 				"internalType": "string",
 				"name": "githubLink",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "skills",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "proficiency",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "socialMediaLinks",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "platform",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "link",
 				"type": "string"
 			}
 		],
