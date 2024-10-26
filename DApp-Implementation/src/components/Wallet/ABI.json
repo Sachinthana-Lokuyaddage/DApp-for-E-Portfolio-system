@@ -59,7 +59,7 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "_educationDetailCount",
+				"name": "_educationId",
 				"type": "uint256"
 			}
 		],
@@ -92,7 +92,7 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "_experienceDetailCount",
+				"name": "_experienceId",
 				"type": "uint256"
 			}
 		],
@@ -153,7 +153,7 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "_projectCount",
+				"name": "_projectId",
 				"type": "uint256"
 			}
 		],
@@ -318,9 +318,9 @@
 						"type": "string"
 					}
 				],
-				"internalType": "struct Portfolio.Education[10]",
+				"internalType": "struct Portfolio.Education[]",
 				"name": "",
-				"type": "tuple[10]"
+				"type": "tuple[]"
 			}
 		],
 		"stateMutability": "view",
@@ -358,9 +358,9 @@
 						"type": "string"
 					}
 				],
-				"internalType": "struct Portfolio.Experience[10]",
+				"internalType": "struct Portfolio.Experience[]",
 				"name": "",
-				"type": "tuple[10]"
+				"type": "tuple[]"
 			}
 		],
 		"stateMutability": "view",
@@ -398,9 +398,9 @@
 						"type": "string"
 					}
 				],
-				"internalType": "struct Portfolio.Project[10]",
+				"internalType": "struct Portfolio.Project[]",
 				"name": "",
-				"type": "tuple[10]"
+				"type": "tuple[]"
 			}
 		],
 		"stateMutability": "view",

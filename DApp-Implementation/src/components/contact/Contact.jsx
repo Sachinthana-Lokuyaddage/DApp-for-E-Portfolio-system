@@ -20,7 +20,7 @@ const Contact = ({state}) => {
             </h1>
             <a href={resume} target='_blank' rel="noopener noreferrer">
                 <button className="downlodeBTN">
-                    View Resume
+                    Contact
                 </button>
             </a>
 
