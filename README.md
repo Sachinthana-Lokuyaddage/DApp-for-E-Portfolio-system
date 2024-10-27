@@ -23,15 +23,19 @@ This project integrates blockchain technology into electronic portfolios (e-port
 - **Decentralized Storage**: Pinata and IPFS for secure file storage.
 - **DApp Interface**: A web-based front-end enabling interaction with blockchain and IPFS.
 
-## Outcomes
+## Research_Proposal
 
-The project delivers a decentralized e-portfolio management solution that allows users to securely store, verify, and share achievements and credentials. By using Ethereum Sepolia and Pinata, the system ensures data security, transparency, and authenticity.
+[Research_Proposal.pdf](https://github.com/user-attachments/files/17301145/Research_Proposal_2020E186_2020E198.pdf)
+
+## Contributions
 
 Research Partners : [Swarnakumara L.Y.S.B (2020/E/198)](https://github.com/CydexCode) , [Perera S.D.M (2020/E/186)](https://github.com/ManashviCode)
 
 Supervisor(s): Dr. A. Kaneshwaran ,  Mr. Pirunthapan Yogathasan
 
-[Research_Proposal.pdf](https://github.com/user-attachments/files/17301145/Research_Proposal_2020E186_2020E198.pdf)
+## Outcomes
+
+The project delivers a decentralized e-portfolio management solution that allows users to securely store, verify, and share achievements and credentials. By using Ethereum Sepolia and Pinata, the system ensures data security, transparency, and authenticity.
 
 
 ![1](https://github.com/user-attachments/assets/692622e7-ea85-43ea-a2d4-82d8943ac148)
