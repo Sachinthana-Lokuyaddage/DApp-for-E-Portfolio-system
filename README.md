@@ -1,4 +1,4 @@
-## Blockchain-Based Secure e-Portfolio Management System (Research Project)
+### Blockchain-Based Secure e-Portfolio Management System (Research Project)
 
 This project integrates blockchain technology into electronic portfolios (e-portfolios) to enhance security, authenticity, and integrity. It utilizes the Ethereum Sepolia testnet, Pinata for decentralized storage, and Solidity for smart contract development to create a secure platform for managing digital records like achievements, credentials, and personal data.
 
