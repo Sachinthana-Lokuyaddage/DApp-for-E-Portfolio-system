@@ -70,10 +70,7 @@ contract Portfolio {
         projects.push(Project(projects.length, _name, _description, _image, _githubLink));
     }
 
-    function changeProject(string calldata _name, string calldata _description, string calldata _image, string calldata _githubLink, uint _projectId) external {
-        require(_projectId < projects.length, "Invalid project ID");
-        projects[_projectId] = Project(_projectId, _name, _description, _image, _githubLink);
-    }
+
 
     function allProjects() external view returns(Project[] memory) {
         return projects;
@@ -84,10 +81,7 @@ contract Portfolio {
         educationDetails.push(Education(educationDetails.length, _date, _degree, _knowledgeAcquired, _institutionName));
     }
 
-    function changeEducation(string calldata _date, string calldata _degree, string calldata _knowledgeAcquired, string calldata _institutionName, uint _educationId) external onlyManager {
-        require(_educationId < educationDetails.length, "Invalid education ID");
-        educationDetails[_educationId] = Education(_educationId, _date, _degree, _knowledgeAcquired, _institutionName);
-    }
+
 
     function allEducationDetails() external view returns(Education[] memory) {
         return educationDetails;
@@ -98,10 +92,7 @@ contract Portfolio {
         experienceDetails.push(Experience(experienceDetails.length, _date, _post, _knowledgeAcquired, _companyName));
     }
 
-    function changeExperience(string calldata _date, string calldata _post, string calldata _knowledgeAcquired, string calldata _companyName, uint _experienceId) external onlyManager {
-        require(_experienceId < experienceDetails.length, "Invalid experience ID");
-        experienceDetails[_experienceId] = Experience(_experienceId, _date, _post, _knowledgeAcquired, _companyName);
-    }
+
 
     function allExperienceDetails() external view returns(Experience[] memory) {
         return experienceDetails;
@@ -112,9 +103,7 @@ contract Portfolio {
         hero = Hero(0, _imageLink, _description, _resumeLink, _email);
     }
 
-    function changeHero(string calldata _imageLink, string calldata _description, string calldata _resumeLink, string calldata _email) external onlyManager {
-        hero = Hero(0, _imageLink, _description, _resumeLink, _email);
-    }
+
 
     function getHero() external view returns (Hero memory) {
         return hero;
