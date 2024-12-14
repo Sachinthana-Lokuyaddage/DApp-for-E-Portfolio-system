@@ -1,0 +1,146 @@
+/* Fullscreen container styling */
+.contract-addresses-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading Styling */
+  .contract-addresses-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    table-layout: fixed; /* Ensures consistent column width */
+  }
+  
+  /* Table Header Styling */
+  th {
+    background-color: #359bdf;
+    color: white;
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Table Cell Styling */
+  td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden; /* Prevent overflow in cells */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Table Row Hover Effect */
+  tbody tr:hover {
+    background-color: #e9f7f3;
+    cursor: pointer;
+  }
+  
+  /* Address Box Styling */
+  .address-box {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px;
+    width: 100%;
+    display: inline-block;
+  }
+  
+  /* Copy Button Styling */
+  .copy-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+  }
+  
+  /* Hover effect for the copy button */
+  .copy-btn:hover {
+    background-color: #45a049;
+  }
+
+
+  .filter-container {
+    display: flex;
+   
+    align-items: flex-start;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .filter-container label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding-top: 5px;
+    margin-bottom: 8px;
+  }
+  
+  .filter-container input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .filter-container input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .filter-container input::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+    .filter-container input {
+      width: 100%;
+    }
+  }
+  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    th, td {
+      padding: 8px 10px;
+    }
+  
+    .contract-addresses-container h1 {
+      font-size: 2rem;
+    }
+  
+    .address-box {
+      max-width: 150px;
+    }
+  }
+  

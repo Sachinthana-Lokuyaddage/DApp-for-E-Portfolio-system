@@ -1,66 +1,146 @@
-import { useState } from "react";
-import ABI from "./ABI.json";
+import React, { useState, useEffect } from "react";
 import Web3 from "web3";
-import './ContractAdresses.css';
+import "./ContractAdresses.css";
 
-const ContractAdresses = ({ saveState }) => {
-  const [connected, setConnected] = useState(true);
-  const [contractAddress, setContractAddress] = useState(""); // Store contract address from user input
-  const isAndroid = /android/i.test(navigator.userAgent);
+function ContractAdresses() {
+  const [users, setUsers] = useState([]);
+  const [filteredUsers, setFilteredUsers] = useState([]);
+  const [emailFilter, setEmailFilter] = useState("");
+  const [copyMessage, setCopyMessage] = useState("");
 
-  const init = async () => {
+  const web3 = new Web3(window.ethereum);
+
+  const contractABI = [
+    {
+      inputs: [
+        { internalType: "string", name: "_name", type: "string" },
+        { internalType: "string", name: "_email", type: "string" },
+        { internalType: "address", name: "_contractAddress", type: "address" },
+      ],
+      name: "storeUserInfo",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      stateMutability: "nonpayable",
+      type: "constructor",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        { indexed: false, internalType: "uint256", name: "userId", type: "uint256" },
+        { indexed: false, internalType: "address", name: "user", type: "address" },
+        { indexed: false, internalType: "string", name: "name", type: "string" },
+        { indexed: false, internalType: "string", name: "email", type: "string" },
+        { indexed: false, internalType: "address", name: "contractAddress", type: "address" },
+      ],
+      name: "UserInfoStored",
+      type: "event",
+    },
+    {
+      inputs: [],
+      name: "getAllUsers",
+      outputs: [
+        {
+          components: [
+            { internalType: "string", name: "name", type: "string" },
+            { internalType: "string", name: "email", type: "string" },
+            { internalType: "address", name: "contractAddress", type: "address" },
+          ],
+          internalType: "struct UserInfoStorage.UserInfo[]",
+          name: "",
+          type: "tuple[]",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+  ];
+
+  const contractAddress = "0x5DE049692f031676798BFCB3C27344c6601a991D";
+  const contract = new web3.eth.Contract(contractABI, contractAddress);
+
+  useEffect(() => {
+    getAllUsers();
+  }, []);
+
+  const getAllUsers = async () => {
     try {
-      const web3 = new Web3(window.ethereum);
-      await window.ethereum.request({ method: 'eth_requestAccounts' });
-      
-      // Check if the contract address is valid before proceeding
-      if (web3.utils.isAddress(contractAddress)) {
-        const contract = new web3.eth.Contract(ABI, contractAddress);
-        console.log(contract);
-        setConnected(false);
-        saveState({ web3: web3, contract: contract });
-      } else {
-        alert("Invalid contract address. Please enter a valid address.");
-      }
-      
+      const usersData = await contract.methods.getAllUsers().call();
+      setUsers(usersData);
+      setFilteredUsers(usersData);
     } catch (error) {
-      alert("Please Install Metamask");
+      console.error("Error retrieving users:", error);
     }
   };
 
+  const handleFilterChange = (e) => {
+    const email = e.target.value;
+    setEmailFilter(email);
+    if (email.trim() === "") {
+      setFilteredUsers(users);
+    } else {
+      const filtered = users.filter((user) =>
+        user.email.toLowerCase().includes(email.toLowerCase())
+      );
+      setFilteredUsers(filtered);
+    }
+  };
+
+  const handleCopy = (address) => {
+    navigator.clipboard.writeText(address).then(() => {
+      setCopyMessage(`Copied: ${address}`);
+      setTimeout(() => setCopyMessage(""), 2000); // Clear message after 2 seconds
+    });
+  };
+
   return (
-    <>
-      <div className="header">
-        {isAndroid && (
-          <button className="connectBTN">
-            <a href="https://metamask.app.link/dapp/sriche.netlify.app/">Click For Mobile</a>
-          </button>
-        )}
-      
-        <img src="https://static.vecteezy.com/system/resources/previews/023/981/182/original/group-of-people-in-different-professions-businessman-construction-worker-female-doctor-teacher-waiter-chef-cartoon-illustration-free-png.png" alt="Left" className="headerImage leftImage" /> {/* Left Image */}
+    <div className="contract-addresses-container">
+      <h1>Contract Addresses</h1>
 
-       
+    {/* Email filter input */}
+<div className="filter-container">
+  <label htmlFor="email-filter">Filter by Email:</label>
+  <input
+    id="email-filter"
+    type="text"
+    placeholder="Enter email to filter"
+    value={emailFilter}
+    onChange={handleFilterChange}
+  />
+</div>
 
-        <h1>Enter the Contract Address to find the person</h1>
-        <div className="container01">
-        <input 
-          type="text" 
-          className="addressInput" 
-          placeholder="Enter Contract Address" 
-          value={contractAddress} 
-          onChange={(e) => setContractAddress(e.target.value)} 
-          disabled={!connected} // Disable input if already connected
-        />
-        <button className="connectBTN" onClick={init} disabled={!connected}>
-          {connected ? "Connect Metamask" : "Connected Metamask"}
-        </button>
-        </div>
 
-       
+      {/* Feedback message */}
+      {copyMessage && <div className="copy-message">{copyMessage}</div>}
 
-      </div>
-    </>
+      {/* Table of filtered results */}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contract Address</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredUsers.map((user, index) => (
+            <tr key={index}>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>{user.contractAddress}</td>
+              <td>
+                <button onClick={() => handleCopy(user.contractAddress)}>Copy</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
-};
+}
 
 export default ContractAdresses;
