@@ -12,12 +12,16 @@
 }
 
 .exp-section .title {
-    font-size: 28px;
+    font-size: 34px; /* Slightly larger font size */
     text-transform: uppercase;
-    padding-bottom: 4px;
+    position: relative;
+    padding-bottom: 12px; /* Increase padding for spacing */
+    color: var(--color-blue); /* Use a primary color */
+    font-weight: 700; /* Bold text */
+    letter-spacing: 2px; /* Add more letter spacing */
+    text-align: center; /* Center the text */
     border-bottom-style: solid;
-    border-bottom-width: 2px;
-    width: fit-content;
+    border-bottom-width: 5px;
 }
 
 .container {
@@ -29,25 +33,40 @@
     overflow-y: hidden; /* Keep container scrolling horizontally */
 }
 
-.education, .experience {
+.education-container, .experience-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
     gap: 20px;
-    height: 400px; /* Set a fixed height */
+}
+
+.education, .experience {
+    height: 500px; /* Set a fixed height */
     overflow-y: scroll; /* Allow vertical scrolling */
     padding-right: 10px; /* Add padding for the scrollbar */
 }
 
 /* Hide scrollbar on WebKit browsers (e.g., Chrome, Safari) */
 .education::-webkit-scrollbar, .experience::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 .education::-webkit-scrollbar-thumb, .experience::-webkit-scrollbar-thumb {
     background-color: var(--color-blue);
     border-radius: 10px;
+}
+
+.edu-title {
+    font-size: 28px;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    width: fit-content;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-white); /* Set the background to avoid text overlap */
+    z-index: 1;
 }
 
 .education .edu-card, .experience .edu-card {
@@ -60,38 +79,8 @@
     align-items: flex-start;
     gap: 6px;
 }
-
-.edu-card .card-text1 {
-    font-weight: 200;
-    opacity: 0.8;
-    font-size: 14px;
-}
-
-.edu-card .card-text1 .icon {
-    width: 14px;
-    height: 14px;
-    margin-right: 4px;
-}
-
 .edu-card .card-text2 {
-    color: var(--color-blue);
-    font-weight: 500;
-    font-size: 22px;
-}
-
-.edu-card .card-text3 {
-    margin-top: 4px;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 22px;
-    opacity: 0.9;
-}
-
-.edu-card .card-text4 {
-    margin-top: 6px;
-    font-weight: 300;
-    font-size: 16px;
-    opacity: 0.7;
+    font-size: 23px;
 }
 
 /* Responsive Design for Small Screens */
@@ -116,13 +105,8 @@
         font-size: 12px;
     }
 
-    .edu-card .card-text1 .icon {
-        width: 12px;
-        height: 12px;
-    }
-
     .edu-card .card-text2 {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .edu-card .card-text3 {

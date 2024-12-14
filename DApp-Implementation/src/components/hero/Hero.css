@@ -8,7 +8,7 @@
 .hero {
     color: #000;
     width: 100%;
-    height: 70vh;
+    height: 50vh;
     background-color: var(--color-white);
     display: flex;
     justify-content: center;

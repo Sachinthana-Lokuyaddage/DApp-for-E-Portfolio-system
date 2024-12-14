@@ -40,29 +40,33 @@ const Experience = ({ state }) => {
 
             <div className="container">
                 {/* Education Section */}
-                <div className="education">
+                <div className="education-container">
                     <h1 className="edu-title">Education</h1>
-                    {education.length > 0 ? education.map((edu) => (
-                        <div key={edu.id} className="edu-card">
-                            <p className="card-text1">{edu.date}</p>
-                            <h3 className="card-text2">{edu.degree}</h3>
-                            <p className="card-text3">{edu.knowledgeAcquired}</p>
-                            <p className="card-text4">{edu.institutionName}</p>
-                        </div>
-                    )) : <p>No education details available.</p>}
+                    <div className="education">
+                        {education.length > 0 ? education.map((edu) => (
+                            <div key={edu.id} className="edu-card">
+                                <p className="card-text1">{edu.date}</p>
+                                <h3 className="card-text2">{edu.degree}</h3>
+                                <p className="card-text3">{edu.knowledgeAcquired}</p>
+                                <p className="card-text4">{edu.institutionName}</p>
+                            </div>
+                        )) : <p>No education details available.</p>}
+                    </div>
                 </div>
 
                 {/* Experience Section */}
-                <div className="experience">
+                <div className="experience-container">
                     <h1 className="edu-title">Experience</h1>
-                    {experience.length > 0 ? experience.map((exp) => (
-                        <div key={exp.id} className="edu-card">
-                            <p className="card-text1">{exp.date}</p>
-                            <h3 className="card-text2">{exp.post}</h3>
-                            <p className="card-text3">{exp.knowledgeAcquired}</p>
-                            <p className="card-text4">{exp.companyName}</p>
-                        </div>
-                    )) : <p>No experience details available.</p>}
+                    <div className="experience">
+                        {experience.length > 0 ? experience.map((exp) => (
+                            <div key={exp.id} className="edu-card">
+                                <p className="card-text1">{exp.date}</p>
+                                <h3 className="card-text2">{exp.post}</h3>
+                                <p className="card-text3">{exp.knowledgeAcquired}</p>
+                                <p className="card-text4">{exp.companyName}</p>
+                            </div>
+                        )) : <p>No experience details available.</p>}
+                    </div>
                 </div>
             </div>
         </section>

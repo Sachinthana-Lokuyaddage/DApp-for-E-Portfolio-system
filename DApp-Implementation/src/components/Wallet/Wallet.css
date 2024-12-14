@@ -11,9 +11,14 @@
 }
 
 .header h1 {
-    font-size: 24px;
-    color: white;
+    font-size: 40px; /* Increase the font size */
+    color: white; /* Keep the text color white */
     margin-bottom: 20px; /* Add some spacing below the heading */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Transform text to uppercase */
+    letter-spacing: 2px; /* Add some space between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for depth */
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .headerImage {
