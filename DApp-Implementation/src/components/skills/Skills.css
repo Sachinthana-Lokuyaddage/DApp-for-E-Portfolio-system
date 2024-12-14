@@ -12,14 +12,16 @@
 }
 
 .skills .title {
-    font-size: 28px;
+    font-size: 34px; /* Slightly larger font size */
     text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 4px;
+    position: relative;
+    padding-bottom: 12px; /* Increase padding for spacing */
+    color: var(--color-blue); /* Use a primary color */
+    font-weight: 700; /* Bold text */
+    letter-spacing: 2px; /* Add more letter spacing */
+    text-align: center; /* Center the text */
     border-bottom-style: solid;
-    border-bottom-width: 2px;
-    width: fit-content;
-    margin-bottom: 60px; /* Add some spacing below the title */
+    border-bottom-width: 5px;
 
 }
 

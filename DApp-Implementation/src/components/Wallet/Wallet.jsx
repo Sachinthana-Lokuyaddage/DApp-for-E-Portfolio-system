@@ -41,7 +41,7 @@ const Wallet = ({ saveState }) => {
 
        
 
-        <h1>Enter the Contact Address to find the person</h1>
+        <h1>Enter the Contract Address to find the person</h1>
         <div className="container01">
         <input 
           type="text" 
