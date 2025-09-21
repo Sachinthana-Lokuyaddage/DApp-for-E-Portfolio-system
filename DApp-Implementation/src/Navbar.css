@@ -1,6 +1,7 @@
 /* Overall Navbar Styling */
 .custom-navbar {
-    background: linear-gradient(90deg, #1d77d1, #4db8ff); /* Gradient background */
+    /* background: linear-gradient(90deg, #311cee, #4db8ff); Gradient background */
+    background:#211553 ;
     padding: 1rem 2rem;
     position: sticky;
     top: 0;

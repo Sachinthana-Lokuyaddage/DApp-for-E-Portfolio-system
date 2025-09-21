@@ -12,7 +12,7 @@ const Wallet = ({ saveState }) => {
     try {
       const web3 = new Web3(window.ethereum);
       await window.ethereum.request({ method: 'eth_requestAccounts' });
-      
+
       // Check if the contract address is valid before proceeding
       if (web3.utils.isAddress(contractAddress)) {
         const contract = new web3.eth.Contract(ABI, contractAddress);
@@ -22,7 +22,6 @@ const Wallet = ({ saveState }) => {
       } else {
         alert("Invalid contract address. Please enter a valid address.");
       }
-      
     } catch (error) {
       alert("Please Install Metamask");
     }
@@ -30,34 +29,31 @@ const Wallet = ({ saveState }) => {
 
   return (
     <>
+      {/* Header Section */}
       <div className="header">
         {isAndroid && (
           <button className="connectBTN">
             <a href="https://metamask.app.link/dapp/sriche.netlify.app/">Click For Mobile</a>
           </button>
         )}
-      
-        <img src="https://static.vecteezy.com/system/resources/previews/023/981/182/original/group-of-people-in-different-professions-businessman-construction-worker-female-doctor-teacher-waiter-chef-cartoon-illustration-free-png.png" alt="Left" className="headerImage leftImage" /> {/* Left Image */}
+      </div>
 
-       
-
-        <h1>Enter the Contract Address to find the person</h1>
+      {/* Container Section */}
+      <div className="container000">
+        <h1>Enter the Contract Address to Find the Person</h1>
         <div className="container01">
-        <input 
-          type="text" 
-          className="addressInput" 
-          placeholder="Enter Contract Address" 
-          value={contractAddress} 
-          onChange={(e) => setContractAddress(e.target.value)} 
-          disabled={!connected} // Disable input if already connected
-        />
-        <button className="connectBTN" onClick={init} disabled={!connected}>
-          {connected ? "Connect Metamask" : "Connected Metamask"}
-        </button>
+          <input
+            type="text"
+            className="addressInput"
+            placeholder="Enter Contract Address"
+            value={contractAddress}
+            onChange={(e) => setContractAddress(e.target.value)}
+            disabled={!connected} // Disable input if already connected
+          />
+          <button className="connectBTN" onClick={init} disabled={!connected}>
+            {connected ? "Connect Metamask" : "Connected Metamask"}
+          </button>
         </div>
-
-       
-
       </div>
     </>
   );

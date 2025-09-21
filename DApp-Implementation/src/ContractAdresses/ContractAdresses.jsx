@@ -59,7 +59,7 @@ function ContractAdresses() {
     },
   ];
 
-  const contractAddress = "0x5DE049692f031676798BFCB3C27344c6601a991D";
+  const contractAddress = "0x4c0bf2E81A9850222fd7d49b78D1C3E9c0DE8B66";
   const contract = new web3.eth.Contract(contractABI, contractAddress);
 
   useEffect(() => {
@@ -92,7 +92,7 @@ function ContractAdresses() {
   const handleCopy = (address) => {
     navigator.clipboard.writeText(address).then(() => {
       setCopyMessage(`Copied: ${address}`);
-      setTimeout(() => setCopyMessage(""), 2000); // Clear message after 2 seconds
+      setTimeout(() => setCopyMessage(""), 2000); // Clear message after 2 seconds bjhv b
     });
   };
 

@@ -16,13 +16,16 @@ function Home() {
         <div className="hero-overlay">
           <div className="hero-content">
             <h1>Blockchain-Based Secure e-Portfolio Management System</h1>
-            <p>
-              Experience the future of secure and transparent e-portfolio management, powered by blockchain technology.
-            </p>
             <button className="cta-button" onClick={handleButtonClick}>Get Started</button>
           </div>
         </div>
       </header>
+
+      <section className="intro-section">
+        <p>
+          Experience the future of secure and transparent e-portfolio management, powered by blockchain technology.
+        </p>
+      </section>
 
       <section className="features-section">
         <h2>Key Features</h2>

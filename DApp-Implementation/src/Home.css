@@ -11,7 +11,8 @@ body {
   }
   /* Hero Section */
   .hero-section {
-    background:var(--color-searchBar);
+    background: url('.\assets\DALL·E 2024-12-18 13.00.19 - A conceptual digital artwork representing blockchain technology. The image features interconnected blocks forming a chain, glowing with blue neon ligh.webp') no-repeat center, var(--color-searchBar); /* Image with fallback color */
+    background-size: cover; /* Ensures the image covers the entire section */
     height: 65vh;
     display: flex;
     align-items: center;
@@ -39,23 +40,48 @@ body {
     max-width: 1500px;
     text-align: center; /* Center the text content */
     margin: 0 auto; /* Ensures horizontal centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .hero-content h1 {
-    padding-top: 22rem;
     font-size: 5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: white;
+    text-shadow: 
+        -3px -3px 0 black, 
+        3px -3px 0 black, 
+        -3px 3px 0 black, 
+        3px 3px 0 black,
+        -6px -6px 0 rgba(0, 0, 0, 0.6), 
+        6px -6px 0 rgba(0, 0, 0, 0.6), 
+        -6px 6px 0 rgba(0, 0, 0, 0.6), 
+        6px 6px 0 rgba(0, 0, 0, 0.6);
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: rgb(251, 252, 255);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: rgb(22, 18, 87);
+  padding: 0.5rem; /* Optional: Add padding for spacing */
+  font-weight: 1000;
+  /* text-shadow: 
+        
+  -1px -1px 0 rgba(243, 239, 239, 0.6), 
+  1px -1px 0 rgba(240, 234, 234, 0.6), 
+  -1px 1px 0 rgba(248, 236, 236, 0.6), 
+  1px 1px 0 rgba(235, 230, 230, 0.6);
+       */
+
 }
 
+
+
 .cta-button {
-    background-color: #200ae2;
+    background-color: #311cee;
     color: #e4e8ec;
     font-size: 1rem;
     padding: 10px 20px;
@@ -66,7 +92,23 @@ body {
 }
 
 .cta-button:hover {
-    background-color: #5f6092;
+    background-color: #000058;
+}
+
+/* Intro Section */
+.intro-section {
+    background-color: #f8f9fa;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.intro-section p {
+    font-size: 1.8rem;
+    margin: 0 auto;
+    max-width: 800px;
+    color: #2c3e50;
+    font-weight: 500;
+    line-height: 1.6;
 }
 
   
@@ -130,7 +172,7 @@ body {
   
   /* Footer Section */
   .footer {
-    background-color: #1d77d1;
+    background-color:#211553;
     color: white;
     padding: 1rem;
   }
