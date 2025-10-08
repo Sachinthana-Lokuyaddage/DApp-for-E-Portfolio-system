@@ -1,0 +1,75 @@
+version: '3.7'
+
+services:
+  node1:
+    image: quorumengineering/quorum:latest
+    container_name: quorum-node1
+    command: ["/usr/local/bin/geth", "--datadir", "/qdata", "--raft", "--rpc", "--rpcaddr", "0.0.0.0", "--rpcport", "22000", "--rpcvhosts", "*", "--networkid", "10", "--port", "21000", "--verbosity", "3"]
+    ports:
+      - "22000:22000"
+      - "21000:21000"
+      - "50400:50400"
+    volumes:
+      - ./node1:/qdata
+    networks:
+      - quorum-net
+
+  node2:
+    image: quorumengineering/quorum:latest
+    container_name: quorum-node2
+    command: ["/usr/local/bin/geth", "--datadir", "/qdata", "--raft", "--rpc", "--rpcaddr", "0.0.0.0", "--rpcport", "22001", "--rpcvhosts", "*", "--networkid", "10", "--port", "21001", "--verbosity", "3"]
+    ports:
+      - "22001:22001"
+      - "21001:21001"
+      - "50401:50400"
+    volumes:
+      - ./node2:/qdata
+    networks:
+      - quorum-net
+
+  node3:
+    image: quorumengineering/quorum:latest
+    container_name: quorum-node3
+    command: ["/usr/local/bin/geth", "--datadir", "/qdata", "--raft", "--rpc", "--rpcaddr", "0.0.0.0", "--rpcport", "22002", "--rpcvhosts", "*", "--networkid", "10", "--port", "21002", "--verbosity", "3"]
+    ports:
+      - "22002:22002"
+      - "21002:21002"
+      - "50402:50400"
+    volumes:
+      - ./node3:/qdata
+    networks:
+      - quorum-net
+
+  tessera1:
+    image: quorumengineering/tessera:latest
+    container_name: tessera1
+    ports:
+      - "9001:9001"
+    volumes:
+      - ./tessera1:/tessera
+    networks:
+      - quorum-net
+
+  tessera2:
+    image: quorumengineering/tessera:latest
+    container_name: tessera2
+    ports:
+      - "9002:9001"
+    volumes:
+      - ./tessera2:/tessera
+    networks:
+      - quorum-net
+
+  tessera3:
+    image: quorumengineering/tessera:latest
+    container_name: tessera3
+    ports:
+      - "9003:9001"
+    volumes:
+      - ./tessera3:/tessera
+    networks:
+      - quorum-net
+
+networks:
+  quorum-net:
+    driver: bridge

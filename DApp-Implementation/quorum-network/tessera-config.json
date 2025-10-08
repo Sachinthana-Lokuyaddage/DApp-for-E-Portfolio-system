@@ -1,0 +1,27 @@
+{
+  "jdbc": {
+    "username": "",
+    "password": "",
+    "url": "jdbc:h2:./tessera",
+    "driverClassName": "org.h2.Driver"
+  },
+  "serverConfigs": [
+    {
+      "app":"tessera",
+      "serverUrl":"http://tessera1:9001",
+      "communicationType":"REST"
+    }
+  ],
+  "peerUrls": [
+    "http://tessera2:9001",
+    "http://tessera3:9001"
+  ],
+  "keys": {
+    "keyData": [
+      {
+        "publicKey":"<BASE64_PUBLIC_KEY_NODE1>",
+        "privateKey":"<BASE64_PRIVATE_KEY_NODE1>"
+      }
+    ]
+  }
+}
