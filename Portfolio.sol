@@ -1,6 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.7.0 <0.9.0;
 
+interface ICredentialVerification {
+    function isVerified(address _user) external view returns (bool);
+}
+
 contract Portfolio {
 
     struct Project {
@@ -53,9 +57,13 @@ contract Portfolio {
     Skill[] public skills;
 
     address public manager;
+    ICredentialVerification public verifier;
 
-    constructor() {
+    event ProjectAdded(uint indexed id, string name, string image);
+
+    constructor(address _credentialVerification) {
         manager = msg.sender;
+        verifier = ICredentialVerification(_credentialVerification);
         // Initialize hero with default values, including email
         hero = Hero(0, "QmQ1o1jw4wGtttRcrXbz1xk1QdzLQGZyzULQ79Y6UaojEf", "A motivated software engineer.....", "QmT9hstvnvYhYJHWMJkr5p1vdVeApc3o88pYpgTbHjwjZM", "sachinthanabuddhika79@gmail.com");
     }
@@ -65,45 +73,43 @@ contract Portfolio {
         _;
     }
 
-    // Project functions
-    function insertProject(string calldata _name, string calldata _description, string calldata _image, string calldata _githubLink) external {
-        projects.push(Project(projects.length, _name, _description, _image, _githubLink));
+    modifier onlyVerified(address _user) {
+        require(verifier.isVerified(_user), "User not verified");
+        _;
     }
 
-
+    // Project functions - require verification of the caller's address
+    function insertProject(string calldata _name, string calldata _description, string calldata _image, string calldata _githubLink) external onlyVerified(msg.sender) {
+        projects.push(Project(projects.length, _name, _description, _image, _githubLink));
+        emit ProjectAdded(projects.length - 1, _name, _image);
+    }
 
     function allProjects() external view returns(Project[] memory) {
         return projects;
     }
 
-    // Education functions
+    // Education functions - manager only (could be verified separately if desired)
     function insertEducation(string calldata _date, string calldata _degree, string calldata _knowledgeAcquired, string calldata _institutionName) external onlyManager {
         educationDetails.push(Education(educationDetails.length, _date, _degree, _knowledgeAcquired, _institutionName));
     }
-
-
 
     function allEducationDetails() external view returns(Education[] memory) {
         return educationDetails;
     }
 
-    // Experience functions
+    // Experience functions - manager only
     function insertExperience(string calldata _date, string calldata _post, string calldata _knowledgeAcquired, string calldata _companyName) external onlyManager {
         experienceDetails.push(Experience(experienceDetails.length, _date, _post, _knowledgeAcquired, _companyName));
     }
-
-
 
     function allExperienceDetails() external view returns(Experience[] memory) {
         return experienceDetails;
     }
 
-    // Hero functions
-    function insertHero(string calldata _imageLink, string calldata _description, string calldata _resumeLink, string calldata _email) external onlyManager {
+    // Hero functions - require verification to update
+    function insertHero(string calldata _imageLink, string calldata _description, string calldata _resumeLink, string calldata _email) external onlyVerified(msg.sender) {
         hero = Hero(0, _imageLink, _description, _resumeLink, _email);
     }
-
-
 
     function getHero() external view returns (Hero memory) {
         return hero;
@@ -113,8 +119,8 @@ contract Portfolio {
         return hero.email;
     }
 
-    // Social Media functions
-    function addSocialMedia(string calldata _platform, string calldata _link) external onlyManager {
+    // Social Media functions - require verification
+    function addSocialMedia(string calldata _platform, string calldata _link) external onlyVerified(msg.sender) {
         socialMediaLinks.push(SocialMedia(_platform, _link));
     }
 
@@ -122,8 +128,8 @@ contract Portfolio {
         return socialMediaLinks;
     }
 
-    // Skill functions
-    function addSkill(string calldata _name, string calldata _proficiency) external onlyManager {
+    // Skill functions - require verification
+    function addSkill(string calldata _name, string calldata _proficiency) external onlyVerified(msg.sender) {
         skills.push(Skill(_name, _proficiency));
     }
 
